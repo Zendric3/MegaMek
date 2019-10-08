@@ -2352,11 +2352,11 @@ public abstract class Entity extends TurnOrdered implements Transporter,
         }
         // if show unit id is on, append the id
         if (PreferenceManager.getClientPreferences().getShowUnitId()) {
-            nbuf.append(" ID:").append(getId());
+            nbuf.append(" IDD:").append(getId());
         } else if (duplicateMarker > 1) {
             // if not, and a player has more than one unit with the same name,
             // append "#N" after the model to differentiate.
-            nbuf.append(" #" + duplicateMarker);
+            nbuf.append(" ##" + duplicateMarker);
         }
         if (getOwner() != null) {
             nbuf.append(" (").append(getOwner().getName()).append(")");
@@ -2393,11 +2393,11 @@ public abstract class Entity extends TurnOrdered implements Transporter,
         }
         // if show unit id is on, append the id
         if (PreferenceManager.getClientPreferences().getShowUnitId()) {
-            nbuf.append(" ID:").append(getId());
+            nbuf.append(" IDD:").append(getId());
         } else if (duplicateMarker > 1) {
             // if not, and a player has more than one unit with the same name,
             // append "#N" after the model to differentiate.
-            nbuf.append(" #" + duplicateMarker);
+            nbuf.append(" ##" + duplicateMarker);
         }
 
         shortName = nbuf.toString();
@@ -3342,10 +3342,10 @@ public abstract class Entity extends TurnOrdered implements Transporter,
      */
     public int getHeatFiringModifier() {
         int mod = 0;
-        if (heat >= 8) {
+        if ((heat >= 8 && !hasAbility(OptionsConstants.PILOT_ILO)) || heat >=10) {
             mod++;
         }
-        if (heat >= 13) {
+        if ((heat >= 13 && !hasAbility(OptionsConstants.PILOT_ILO)) || heat >=15) {
             mod++;
         }
         if (heat >= 17) {

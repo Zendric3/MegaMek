@@ -62,7 +62,7 @@ public class PilotOptions extends AbstractOptions {
         addOption(adv, OptionsConstants.PILOT_TM_SWAMP_BEAST, false); //$NON-NLS-1$
         // addOption(adv, OptionsConstants.PILOT_WIND_WALKER, false); //$NON-NLS-1$
         addOption(adv, OptionsConstants.PILOT_ZWEIHANDER, false); //$NON-NLS-1$
-
+        addOption(adv, OptionsConstants.PILOT_ILO, false);
         // Gunnery Abilities
         // addOption(adv, OptionsConstants.GUNNERY_BLOOD_STALKER, false); //$NON-NLS-1$
         addOption(adv, OptionsConstants.GUNNERY_CLUSTER_HITTER, false); //$NON-NLS-1$

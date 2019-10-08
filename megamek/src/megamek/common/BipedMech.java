@@ -161,7 +161,13 @@ public class BipedMech extends Mech {
                     wmp -= 5;
                 }
             } else {
-                wmp -= (heat / 5);
+            	if (hasAbility(OptionsConstants.PILOT_ILO)) {
+                wmp -= ((heat-2) / 5);
+            	}
+            	else
+            	{
+            		wmp -= (heat/5);
+            	}
             }
             // TSM negates some heat, but provides no benefit when using tracks.
             if ((heat >= 9) && hasTSM() && legsDestroyed == 0 && movementMode != EntityMovementMode.TRACKED) {
